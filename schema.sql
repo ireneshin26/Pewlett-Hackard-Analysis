@@ -35,23 +35,22 @@ CREATE TABLE salaries (
 	foreign key (emp_no) references employees (emp_no)
 ); 
 
+
 CREATE TABLE titles (
 	emp_no int NOT NULL,
 	title VARCHAR NOT NULL,
 	from_date date NOT NULL,
 	to_date date NOT NULL,
-	primary key (emp_no),
-	foreign key (emp_no) references employees (emp_no)
+	foreign key (emp_no) references salaries (emp_no)
 ); 
+
 
 CREATE TABLE dept_emp (
 	emp_no int NOT NULL,
 	dept_no VARCHAR NOT NULL,
 	from_date date NOT NULL,
 	to_date date NOT NULL,
-	primary key (emp_no, dept_no),
 	foreign key (emp_no) references employees (emp_no),
 	foreign key (dept_no) references departments (dept_no)
 ); 
-
 
