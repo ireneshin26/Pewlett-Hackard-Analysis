@@ -21,7 +21,6 @@ CREATE TABLE dept_managers (
 	emp_no int NOT NULL,
 	from_date date NOT NULL,
 	to_date date NOT NULL,
-	primary key (emp_no, dept_no),
 	foreign key (emp_no) references employees (emp_no),
 	foreign key (dept_no) references departments (dept_no)
 );
@@ -54,3 +53,10 @@ CREATE TABLE dept_emp (
 	foreign key (dept_no) references departments (dept_no)
 ); 
 
+--SHOW TABLES
+SELECT * FROM departments;
+SELECT * FROM employees;
+SELECT * FROM dept_managers;
+SELECT * FROM salaries;
+SELECT * FROM titles;
+SELECT * FROM dept_emp;
